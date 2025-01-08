@@ -1,0 +1,48 @@
+.banner {
+    position: relative;
+}
+.banner .overplay img {
+    width: 100%;
+}
+
+.banner .title-1 h5 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-second);
+    color: var(--main-color-100);
+    font-size: 60px;
+}
+.banner .title-2 h2 {
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-second);
+    color: var(--main-color-400);
+    font-size: 80px;
+}
+.banner .btn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner .btn button {
+    background: none;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    border: 2px solid var(--main-color-400);
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s all;
+    
+}
+.banner .btn button:hover {
+    background: var(--main-color-300);
+    color: var(--bg-color);
+    filter: brightness(1.5); 
+}

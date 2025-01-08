@@ -1,0 +1,32 @@
+.custom-headline {
+    border-radius: 200px 0 200px 0;
+    margin-bottom: 100px;
+}
+
+.showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+.showcase .box-showcase {
+    width: calc(100% / 4 - 30px);
+    background: var(--main-color-300);
+    color: var(--bg-color);
+    border-radius: 20px;
+}
+.box-showcase .thumb img {
+    width: 200px;
+    margin: 0 auto;
+}
+.box-showcase .content {
+    padding: 0 20px 10px 20px;
+}
+.box-showcase .content .title {
+    font-size: 24px;
+    color: var(--main-color-100);
+    margin-bottom: 20px;
+}
+.box-showcase .content .rating i {
+    color: rgb(255, 251, 0);
+}

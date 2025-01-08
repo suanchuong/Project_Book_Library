@@ -1,0 +1,195 @@
+.header {
+    background: var(--main-color-400);
+    color: var(--main-color-100);
+    font-family: var(--font-main);
+    position: relative;
+}
+
+/* Header main */
+.header-icon-search,
+.header-logo,
+.header-icon-shopping {
+    position: absolute;
+}
+
+.header-logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--main-color-400);
+    cursor: pointer;
+}
+.header-logo img {
+    width: 150px;
+}
+
+.header-icon-search {
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    cursor: pointer;
+}
+.header-icon-search i {
+    transition: text-shadow 0.3s ease;
+}
+.header-icon-search i:hover {
+    filter: brightness(1.2); 
+    text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+
+.header-icon-shopping {
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    cursor: pointer;
+}
+.header-icon-shopping i {
+    transition: text-shadow 0.3s ease;
+}
+.header-icon-shopping i:hover {
+    filter: brightness(1.2); 
+    text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+
+/* Top */
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--main-color-100);
+    z-index: 2;
+}
+/* Top left */
+.header-top-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.header-top-left p {
+    font-size: 18px;
+    font-weight: 300;
+}
+.header-top-left .social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.header-top-left .social i {
+    transition: text-shadow 0.3s ease;
+}
+.header-top-left .social i:hover {
+    filter: brightness(1.2); 
+    text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+
+/* Top right */
+.header-top-right .sign-in {
+    color: var(--main-color-100);
+    background: none;
+    border: none;
+    padding: 5px 20px;
+    margin-right: 30px;
+    text-align: center;
+    transition: text-shadow 0.3s ease;
+}
+.header-top-right .sign-in:hover {
+    filter: brightness(1.2); 
+    text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+
+.header-top-right .sign-up {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    background: var(--main-color-100);
+    color: var(--main-color-400);
+    font-weight: 600;
+    transition: box-shadow 0.3s ease;
+}
+.header-top-right .sign-up:hover {
+    filter: brightness(1.2); 
+    box-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+
+/* Bottom */
+.header-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 0px 100px;
+    padding: 20px 0;
+}
+
+/* Menu left */
+.header-bottom-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    cursor: pointer;
+}
+.header-bottom-left li,
+.header-bottom-right li {
+    position: relative;
+}
+.header-bottom-left li span,
+.header-bottom-right li span {
+    padding: 30px 0;
+}
+.header-bottom-left>li::after,
+.header-bottom-right>li::after {
+    position: absolute;
+    content: '';
+    background: var(--main-color-100);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -20px;
+    transition: width 0.3s linear;
+}
+.header-bottom-left li:hover::after,
+.header-bottom-right li:hover::after {
+    width: 100%;
+}
+
+/* Menu right */
+.header-bottom-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    cursor: pointer;
+}
+
+/* Dropdown */
+.header-bottom-left li .dropdown {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 63px;
+    left: 0;
+    color: var(--main-color-100);
+    background: var(--main-color-400);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 20px 20px;
+    z-index: 3;
+    padding: 10px 50px 10px 20px;
+    transition: 0.5s all;
+}
+.header-bottom-left .dropdown li {
+    padding: 20px 10px 20px 0;
+    transition: text-shadow 0.3s ease;
+}
+.header-bottom-left .dropdown li:hover {
+    filter: brightness(1.2); 
+    text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
+}
+.header-bottom-left li:hover>.dropdown {
+    top: 55px;
+    opacity: 1;
+    visibility: visible;
+}

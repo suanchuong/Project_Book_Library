@@ -1,0 +1,58 @@
+.benefit-list{
+    margin-top: 150px;
+}
+.benefits-top {
+    display: flex;
+    flex-wrap: wrap;
+}
+.benefits-top .benefits-top-left {
+    width: 40%;
+}
+.benefits-top .benefits-top-right {
+    width: 55%;
+    margin-left: 40px;
+    background: var(--main-color-300);
+    color: var(--bg-color);
+    padding: 20px;
+    border-radius: 20px;
+}
+.benefits-title {
+    font-family: var(--font-main);
+    color: var(--main-color-100);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.benefits-desc {
+    font-family: var(--font-main);
+}
+.benefits-check {
+    font-family: var(--font-second);
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 10px;
+}
+.benefits-check i {
+    color: var(--main-color-100);
+    margin-right: 10px;
+}
+.benefits-check li {
+    margin-bottom: 20px;
+}
+
+.benefits-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 150px auto;
+}
+.benefits-bottom-left {
+    width: 55%;
+    margin-right: 40px;
+    background: var(--main-color-300);
+    color: var(--bg-color);
+    padding: 20px;
+    border-radius: 20px;
+}
+.benefits-bottom-right {
+    width: 40%;
+}

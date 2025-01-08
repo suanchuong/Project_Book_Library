@@ -1,0 +1,14 @@
+.headline {
+    background: var(--main-color-400);
+    color: var(--main-color-100);
+    font-family: var(--font-second);
+    padding: 20px 0px;
+    border-radius: 0 0 200px 0;
+}
+.headline .title {
+    text-align: center;
+    margin: 10px 0;
+}
+.headline .title h1 {
+    font-size: 50px;
+}

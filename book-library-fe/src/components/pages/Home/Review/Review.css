@@ -1,0 +1,110 @@
+.review {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    color: var(--bg-color);
+    /* margin: 100px auto; */
+}
+
+/* Review Left */
+.review .left {
+    width: calc(100% / 2 - 30px);
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--main-color-300);
+}
+.review .left .head h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bg-color);
+    margin-bottom: 20px;
+}
+.review .left .head h2 {
+    color: var(--main-color-100);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.review .left p {
+    width: 90%;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.review .left .people .thumb {
+    border-radius: 50%;
+    margin-bottom: 30px;
+    position: relative;
+}
+.review .left .people .thumb img {
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    width: 60px;
+}
+.review .left .people .thumb img:nth-child(2) {
+    left: 30px;
+}
+.review .left .people .thumb img:nth-child(3) {
+    left: 70px;
+}
+.review .left .view {
+    margin-top: 120px;
+}
+.review .left .view i {
+    color: rgb(255, 251, 0);
+    margin-right: 10px;
+}
+.review .left .view span {
+    margin-left: 5px;
+}
+
+
+/* Right */
+.review .right {
+    width: calc(100% / 2 - 30px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: var(--main-color-200);
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
+}
+.review .right .image {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.review .right .image img {
+    border-radius: 50%;
+    width: 170px;
+    margin-bottom: 20px;
+}
+.review .right .name-review p {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bg-color);
+    text-align: center;
+}
+.review .right .name-review .job {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main-color-400);
+}
+
+.review .right .text {
+    width: 55%;
+}
+.review .right .text .rate {
+    margin-bottom: 20px;
+}
+.review .right .text .rate i {
+    color: rgb(255, 251, 0);
+}
+.review .right .text .info {
+    line-height: 30px;
+}
