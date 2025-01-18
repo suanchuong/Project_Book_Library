@@ -1,0 +1,151 @@
+.custom-headline {
+    background: var(--main-color-300);
+    margin: 100px auto;
+}
+
+.list-product .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+.filter {
+    width: 20%;
+}
+.filter .filter-top h2 {
+    font-weight: 600;
+}
+.filter .filter-top button {
+    border: none;
+    border-radius: 20px;
+    background: var(--main-color-400);
+    color: var(--main-color-100);
+    padding: 10px 20px;
+    margin: 20px auto;
+    font-weight: 500;
+    transition: box-shadow 0.3s ease;
+}
+.filter .filter-top button:hover {
+    filter: brightness(1.2); 
+    box-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-400);
+}
+
+.filter .filter-mid {
+    margin: 20px auto;
+}
+.filter .filter-mid .list-filter h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+
+
+.cart-product {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.cart-product .cart {
+    background: var(--main-color-400);
+    width: calc(100% / 3 - 20px);
+    border-radius: 20px;;
+}
+.cart-product .cart .thumb img {
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+
+
+/* Custom Pagination */
+.pagination-container {
+    margin: 50px auto;
+    margin-bottom: 0;
+    margin-top: 80px;
+}
+.page-link {
+    margin-right: 10px;
+    background: none;
+    text-align: center;
+    color: var(--main-color-400); 
+    font-size: 14px;
+    font-weight: 500; 
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    border: 2px solid transparent;
+}
+.page-link:hover {
+    background: var(--main-color-400); 
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px; 
+}
+.active>.page-link, .page-link.active {
+    background: var(--main-color-400); 
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px; 
+    border: none;
+}
+.page-link:first-child {
+    margin-left: 10px;
+}
+.page-link:last-child {
+    margin-right: 10px;
+}
+.pagination {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center; 
+}
+.page-link:not(.active):hover {
+    background: var(--main-color-400); 
+    color: white; 
+    box-shadow: 0 0 8px;
+}
+.pagination .page-link:first-child {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%; 
+}
+
+.pagination .page-link:last-child {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%; 
+}
+
+/* Custom React Slick */
+.horizontal-slider {
+    width: 80%;
+    height: 6px;
+    background: var(--main-color-400);
+    border-radius: 3px;
+    margin-top: 50px;
+}
+.example-thumb {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--main-color-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--main-color-400);
+    transform: translateY(15px);
+}
+
+.example-track {
+    background: var(--main-color-400);
+    height: 6px;
+    border-radius: 3px;
+}

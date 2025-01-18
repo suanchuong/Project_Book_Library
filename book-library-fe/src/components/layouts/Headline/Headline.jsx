@@ -7,6 +7,8 @@ const Headline = ({ titleIndex = 0, customClass }) => {
         "Discover Your Next Great Read",
         "Discover Our Must-Read Titles",
         "Testimonial",
+        "Explore thousands of books by your favorite genres",
+        "A timeless classic about love and resilience.",
     ];
 
     return (

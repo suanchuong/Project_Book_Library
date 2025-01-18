@@ -1,5 +1,6 @@
 import './Header.css';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Logo from '../../../assets/img/logo.png';
 
 const Header = () => {
@@ -42,8 +43,8 @@ const Header = () => {
             <Container>
                 <div className="header-bottom">
                     <ul className="header-bottom-left">
-                        <li><span>Home</span></li>
-                        <li><span>Category</span>
+                        <li><Link to='/'><span>Home</span></Link></li>
+                        <li><Link to={`/product`}><span>Category</span></Link>
                             <ul className="dropdown">
                                 <li>Author</li>
                                 <li>Genres</li>
