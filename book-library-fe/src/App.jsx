@@ -8,11 +8,12 @@ import Header from './components/layouts/Header/Header';
 import Home from './components/pages/Home/Home';
 import Footer from './components/layouts/Footer/Footer';
 import Product from './components/pages/Product/Product';
+import Detail from './components/pages/Detail/Detail';
 
 
 const App = () => {
-  const location = useLocation();
 
+  const location = useLocation();
   const getBackground = () => {
     if (location.pathname === '/') return 'var(--bg-color)';
     return 'var(--main-color-100)';
@@ -27,6 +28,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Product' element={<Product />} />
+          <Route path='/Product/:id' element={<Detail />} />
+          <Route path='/detail/:id' element={<Detail />} />
 
 
 

@@ -56,6 +56,85 @@
     filter: brightness(1.2); 
     text-shadow: 0 0 10px var(--main-color-100), 0 0 20px var(--main-color-100);
 }
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.shop .shop-left {
+    width: 40%;
+}
+.shop .shop-left img {
+    border-radius: 20px;
+}
+.shop .shop-left .remove {
+    margin-top: 20px;
+    background: var(--main-color-100);
+    color: var(--main-color-400);
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.5s all;
+}
+.shop .shop-left .remove:hover {
+    background: var(--bg-color);
+    filter: brightness(1.2);
+}
+
+.shop .shop-right {
+    width: 50%;
+    margin-left: 30px;
+}
+.shop .shop-right h5 {
+    font-size: 16px;
+    color: var(--bg-color);
+    margin-top: 20px;
+}
+.shop .shop-right h6 {
+    color: #ddd;
+    margin-top: 20px;
+}
+.shop .shop-right .price {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.shop .shop-right .quantity-control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.shop .shop-right .quantity-input {
+    border: 1px solid var(--main-color-100);
+    padding: 4px 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.shop .shop-right .quantity-input:hover {
+    background: var(--main-color-100);
+    color: var(--main-color-400);
+}
+
+.total-spent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.total-spent h5 {
+    color: var(--bg-color);
+}
+.total-spent p {
+    font-size: 20px;
+    font-weight: 600;
+}
+.thumb .quantity-cart {
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    color: var(--bg-color);
+}
 
 /* Top */
 .header-top {
@@ -203,4 +282,50 @@
     top: 55px;
     opacity: 1;
     visibility: visible;
+}
+
+/* Custom Off Canvas */
+.btn-primary {
+    background: none;
+    border: none;
+    --bs-btn-active-bg: none;
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+}
+.btn-primary i {
+    font-size: 24px;
+    color: var(--main-color-100);
+}
+
+.btn-primary:hover {
+    border: none;
+    background: none;
+}
+
+.offcanvas-custom {
+    background-color: var(--main-color-400);
+    color: var(--main-color-100);
+}
+
+.offcanvas-custom .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    transition: 0.5s all;
+}
+
+.offcanvas-custom .btn-close:hover {
+    transform: rotate(180deg);
+}
+
+.offcanvas-title {
+    color: var(--main-color-100);
+    font-weight: 600;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
 }

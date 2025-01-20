@@ -9,28 +9,30 @@ const CartProvider = ({ children }) => {
     );
 
     const handleAddCart = (product) => {
-        const newCart = [...cart];
-        const checkIndex = cart.findIndex((item) => item.id === product.id);
-
+        const checkIndex = cart.findIndex((item) => item._id === product._id);
         if (checkIndex >= 0) {
-            newCart[checkIndex].quantity += product.quantity;
+            const newCart = [...cart];
+            newCart[checkIndex].quantity += 1;
+            setCart(newCart);
+            localStorage.setItem("CART", JSON.stringify(newCart));
         } else {
-            product.quantity = 1;
-            newCart.push(product);
+            console.log("Giỏ sau khi cập nhật:", newCart); 
+            const newCart = [...cart, product];
+            setCart(newCart);
+            localStorage.setItem("CART", JSON.stringify(newCart));
         }
-        setCart(newCart);
-        localStorage.setItem("CART", JSON.stringify(newCart));
     };
+    
 
-    const handleRemove = (id) => {
-        const newCart = cart.filter((item) => item.id !== id); 
+    const handleRemove = (_id) => {
+        const newCart = cart.filter((item) => item._id !== _id); 
         setCart(newCart);
         localStorage.setItem("CART", JSON.stringify(newCart));
     };
 
     const handleQuantity = (productId, type) => {
         const newCart = [...cart];
-        const productIndex = newCart.findIndex((item) => item.id === productId);
+        const productIndex = newCart.findIndex((item) => item._id === productId);
 
         if (productIndex !== -1) {
             if (type === "plus") {

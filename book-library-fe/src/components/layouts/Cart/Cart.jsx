@@ -21,8 +21,6 @@ const Cart = (props) => {
         handleAddCart(product);
     };
 
-
-
     return (
         <div className="cart">
             <div className="thumb">
@@ -37,9 +35,9 @@ const Cart = (props) => {
                 <Link key={props.id} to={`/product/${props.id}`}>
                     <h5 className="title">{props.title}</h5>
                     <p className="price">$ {props.price}</p>
-                    <p className="author">Author : <span>{props.author}</span></p>
-                    <p className="genres">Genres : <span>{props.category}</span></p>
-                    <p className="release">Release : <span>{props.year}</span></p>
+                    <p className="author">Author: <span>{props.author}</span></p>
+                    <p className="genres">Genres: <span>{props.category}</span></p>
+                    <p className="release">Release: <span>{props.year}</span></p>
                     <div className="rating">
                         <i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>
@@ -57,7 +55,7 @@ Cart.propTypes = {
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     thumbnail: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     description: PropTypes.string,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,

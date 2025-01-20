@@ -51,9 +51,9 @@ const Showcase = () => {
                         }}
                     >
                         {filteredShowCase.map((item) => (
-                            <SwiperSlide key={item.id}>
+                            <SwiperSlide key={item._id}>
                                 <ClassicCart
-                                    id={item.id}
+                                    id={item._id}
                                     thumbnail={item.thumbnail}
                                     title={item.title}
                                     price={item.price}

@@ -132,6 +132,7 @@ const Product = () => {
                                     pearling
                                     minDistance={10}
                                 />
+
                             </div>
                         </div>
                     </div>
@@ -140,11 +141,11 @@ const Product = () => {
                         {currentProduct.length > 0 ? (
                             currentProduct.map((item) => (
                                 <Cart
-                                    key={item.id}
-                                    id={item.id}
+                                    key={item._id}
+                                    id={item._id}
                                     thumbnail={item.thumbnail}
                                     title={item.title}
-                                    price={item.price}
+                                    price={item.price.toString()}
                                     author={item.author}
                                     category={item.category}
                                     year={item.year}
