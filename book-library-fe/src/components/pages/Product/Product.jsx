@@ -132,7 +132,6 @@ const Product = () => {
                                     pearling
                                     minDistance={10}
                                 />
-
                             </div>
                         </div>
                     </div>

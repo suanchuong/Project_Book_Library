@@ -24,7 +24,6 @@ const Detail = () => {
                             <p>Year: {detailBook.year}</p>
                             <p>Description:{detailBook.description}</p>
                             <p>Price:$ {detailBook.price}</p>
-                            <button className="add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 ) : (

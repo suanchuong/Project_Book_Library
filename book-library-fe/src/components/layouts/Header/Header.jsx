@@ -11,13 +11,14 @@ const Header = () => {
     const [showCart, setShowCart] = useState(false);
 
     const { cart, handleQuantity } = UseCart();
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    const totalSpent = cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
-
     const handleSearchClose = () => setShowSearch(false);
     const handleSearchShow = () => setShowSearch(true);
     const handleCartClose = () => setShowCart(false);
     const handleCartShow = () => setShowCart(true);
+
+    //Total spent if plus or minus
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const totalSpent = cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
 
     return (
         <div className="header">
@@ -49,7 +50,7 @@ const Header = () => {
                                         <div className='shop' key={item._id}>
                                             <div className="shop-left">
                                                 <img src={item.thumbnail} alt='' />
-                                                <Button className='remove' onClick={() => handleQuantity(item._id, 'delete')}>Remove</Button>
+                                                <Button className='remove' onClick={() => handleQuantity(item.id, 'delete')}>Remove</Button>
                                             </div>
                                             <div className="shop-right">
                                                 <h3>{item.title}</h3>
@@ -57,9 +58,9 @@ const Header = () => {
                                                 <h6>Category: {item.category}</h6>                                                
                                                 <p className='price'>Price: ${(item.price * item.quantity).toFixed(2)}</p>
                                                 <div className="quantity-control">
-                                                    <Button className='quantity-input' onClick={() => handleQuantity(item._id, 'minus')}>-</Button>
+                                                    <Button className='quantity-input' onClick={() => handleQuantity(item.id, 'minus')}>-</Button>
                                                     <span className="quantity">{item.quantity}</span>
-                                                    <Button className='quantity-input' onClick={() => handleQuantity(item._id, 'plus')}>+</Button>
+                                                    <Button className='quantity-input' onClick={() => handleQuantity(item.id, 'plus')}>+</Button>
                                                 </div>
                                             </div>
                                         </div>

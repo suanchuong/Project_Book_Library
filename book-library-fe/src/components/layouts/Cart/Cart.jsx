@@ -4,7 +4,7 @@ import { UseCart } from '../../../Context/Cartcontext';
 import PropTypes from 'prop-types';
 
 const Cart = (props) => {
-    const { handleAddCart } = UseCart();
+    const { handleAddToCart } = UseCart();
 
     const addToCart = () => {
         const product = {
@@ -18,7 +18,7 @@ const Cart = (props) => {
             year: props.year,
             quantity: 1,
         };
-        handleAddCart(product);
+        handleAddToCart(product);
     };
 
     return (

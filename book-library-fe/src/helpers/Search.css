@@ -34,45 +34,18 @@
     margin-bottom: 30px;
 }
 
-.suggested-books ul {
-    list-style: none;
-    padding: 0;
-}
-
-.suggested-books li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-}
-
-.suggested-books img {
-    width: 50px;
-    height: 75px;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.search-results ul {
-    list-style: none;
-    padding: 0;
-}
-
-.search-results li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-}
-
-.search-results img {
-    width: 50px;
-    height: 75px;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.no-results {
+.suggested-books-item a {
     color: var(--main-color-100);
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--main-color-100);
+}
+.suggested-books-item .suggested-books-item-left {
+    width: 20%;
+}
+.suggested-books-item .suggested-books-item-right {
+    width: 70%;
+    margin-left: 20px;
 }

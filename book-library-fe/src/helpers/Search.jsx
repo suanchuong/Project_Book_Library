@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import './Search.css';
 
@@ -7,12 +8,12 @@ const Search = () => {
     const [query, setQuery] = useState("");
     const [filteredBooks, setFilteredBooks] = useState([]);
     const [showSuggestedBooks, setShowSuggestedBooks] = useState(true);
-    
+
     // Cập nhật danh sách sách được lọc khi dữ liệu từ API thay đổi
     useEffect(() => {
         if (query.trim() === "") {
-            setShowSuggestedBooks(true); 
-            setFilteredBooks(books.slice(0, 3)); 
+            setShowSuggestedBooks(true);
+            setFilteredBooks(books.slice(0, 3));
         } else {
             setShowSuggestedBooks(false);
             const lowercasedInput = query.toLowerCase();
@@ -21,7 +22,7 @@ const Search = () => {
             );
             setFilteredBooks(filtered);
         }
-    }, [books, query]); 
+    }, [books, query]);
 
     const handleSearch = (input) => {
         setQuery(input);
@@ -45,47 +46,46 @@ const Search = () => {
             {showSuggestedBooks && query.trim() === "" && (
                 <div className="suggested-books">
                     <h3>Suggested Books</h3>
-                    <ul>
-                        {books.slice(0, 3).map((book) => (
-                            <li key={book._id}>
-                                <img
-                                    src={book.thumbnail}
-                                    alt={book.title}
-                                />
-                                <div>
+                    {books.slice(0, 3).map((book) => (
+                        <div className="suggested-books-item" key={book._id}>
+                            <Link to={`/product/${book._id}`}>
+                                <div className="suggested-books-item-left">
+                                    <img src={book.thumbnail} alt={book.title} />
+                                </div>
+                                <div className="suggested-books-item-right">
                                     <strong>{book.title}</strong>
                                     <p>Author: {book.author}</p>
                                     <p>Release: {book.year}</p>
                                 </div>
-                            </li>
-                        ))}
-                    </ul>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             )}
 
             {/* Kết quả tìm kiếm */}
             <div className="search-results">
-                <ul>
-                    {filteredBooks.length > 0 && query.trim() !== "" ? (
-                        filteredBooks.map((book) => (
-                            <li key={book._id}>
-                                <img
-                                    src={book.thumbnail}
-                                    alt={book.title}
-                                />
-                                <div>
+                {filteredBooks.length > 0 && query.trim() !== "" ? (
+                    filteredBooks.map((book) => (
+                        <div className="suggested-books-item" key={book._id}>
+                            <Link to={`/product/${book._id}`}>
+                                <div className="suggested-books-item-left">
+                                    <img src={book.thumbnail} alt={book.title} />
+                                </div>
+
+                                <div className="suggested-books-item-right">
                                     <strong>{book.title}</strong>
                                     <p>Author: {book.author}</p>
                                     <p>Release: {book.year}</p>
                                 </div>
-                            </li>
-                        ))
-                    ) : (
-                        query.trim() !== "" && (
-                            <p className="no-results">No matching results were found</p>
-                        )
-                    )}
-                </ul>
+                            </Link>
+                        </div>
+                    ))
+                ) : (
+                    query.trim() !== "" && (
+                        <p className="no-results">No matching results were found</p>
+                    )
+                )}
             </div>
         </div>
     );

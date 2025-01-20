@@ -4,59 +4,59 @@ import PropTypes from "prop-types";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState(
-        localStorage.getItem("CART") ? JSON.parse(localStorage.getItem("CART")) : []
-    );
+    const [cart, setCart] = useState(localStorage.getItem("BOOKS") ? JSON.parse(localStorage.getItem("BOOKS")) : []);
 
-    const handleAddCart = (product) => {
-        const checkIndex = cart.findIndex((item) => item._id === product._id);
-        if (checkIndex >= 0) {
-            const newCart = [...cart];
-            newCart[checkIndex].quantity += 1;
-            setCart(newCart);
-            localStorage.setItem("CART", JSON.stringify(newCart));
-        } else {
-            console.log("Giỏ sau khi cập nhật:", newCart); 
-            const newCart = [...cart, product];
-            setCart(newCart);
-            localStorage.setItem("CART", JSON.stringify(newCart));
-        }
-    };
+   //Function Add to cart 
+   const handleAddToCart = (product) => {
+    const newCart = [...cart];
+    const checkIndex = cart.findIndex((item) => item.id === product.id);
+    if(checkIndex >= 0) {
+        newCart[checkIndex].quantity += product.quantity;
+    } else {
+        product.quantity = 1;
+        newCart.push(product);
+    }
+
+    console.log('Updated cart:', newCart);
+    setCart(newCart);
+    localStorage.setItem("BOOKS", JSON.stringify(newCart));
+   }
     
-
-    const handleRemove = (_id) => {
-        const newCart = cart.filter((item) => item._id !== _id); 
+   //Function Remove cart
+    const handleRemoveCart = (id) => {
+        const newCart = cart.filter(item => item.id !== id);
         setCart(newCart);
-        localStorage.setItem("CART", JSON.stringify(newCart));
-    };
+        localStorage.setItem("BOOKS", JSON.stringify(newCart));
+    }
 
-    const handleQuantity = (productId, type) => {
+    //Function quantity cart
+    const handleQuantity = (booksId, type) => {
         const newCart = [...cart];
-        const productIndex = newCart.findIndex((item) => item._id === productId);
-
-        if (productIndex !== -1) {
-            if (type === "plus") {
-                newCart[productIndex].quantity++;
-            } else if (type === "minus") {
-                if (newCart[productIndex].quantity > 1) {
-                    newCart[productIndex].quantity--;
+        const booksIndex = newCart.findIndex((item) => item.id === booksId);
+        
+        if(booksIndex !== -1) {
+            if(type === 'plus') {
+                newCart[booksIndex].quantity++;
+            } else if(type === 'minus') {
+                if(newCart[booksIndex].quantity > 1) {
+                    newCart[booksIndex].quantity--;
                 }
-            } else if (type === "delete") {
-                newCart.splice(productIndex, 1);
+            } else if(type === 'delete') {
+                newCart.splice(booksIndex, 1);
             }
 
             setCart(newCart);
-            localStorage.setItem("CART", JSON.stringify(newCart));
+            localStorage.setItem('BOOKS', JSON.stringify(newCart));
         }
-    };
+    }
 
     const clearCart = () => {
         setCart([]);
-        localStorage.removeItem("CART");
+        localStorage.removeItem("BOOKS");
     };
 
     return (
-        <CartContext.Provider value={{ cart, handleAddCart, handleQuantity, handleRemove, clearCart }}>
+        <CartContext.Provider value={{ cart, handleAddToCart, handleQuantity, handleRemoveCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );
